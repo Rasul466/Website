@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header.jsx';
 import Home from './components/Home.jsx';
 import ProjectPage from './components/ProjectPage.jsx';
@@ -19,12 +19,65 @@ const TWEAK_DEFAULTS = {
   accentTint: true,
 };
 
+const BASE_PATH = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL.slice(0, -1)
+  : import.meta.env.BASE_URL;
+
+function stripBasePath(pathname) {
+  if (!BASE_PATH || BASE_PATH === '/') return pathname;
+  if (pathname === BASE_PATH) return '/';
+  if (pathname.startsWith(`${BASE_PATH}/`)) {
+    return pathname.slice(BASE_PATH.length);
+  }
+  return pathname;
+}
+
+function getViewFromLocation() {
+  const slug = stripBasePath(window.location.pathname).replace(/^\/+|\/+$/g, '');
+  return !slug || slug === 'home' ? { view: 'home' } : { view: 'project', slug };
+}
+
+function getPathForView(next) {
+  const leaf = next.view === 'project' && next.slug ? next.slug : 'home';
+  return BASE_PATH && BASE_PATH !== '/' ? `${BASE_PATH}/${leaf}` : `/${leaf}`;
+}
+
 export default function App() {
-  const [view, setView] = useState({ view: 'home' });
+  const [view, setView] = useState(() => getViewFromLocation());
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
+  useEffect(() => {
+    const canonicalPath = getPathForView(getViewFromLocation());
+    if (window.location.pathname !== canonicalPath) {
+      window.history.replaceState(getViewFromLocation(), '', canonicalPath);
+    }
+
+    const handlePopState = () => {
+      const nextView = getViewFromLocation();
+      const nextPath = getPathForView(nextView);
+      if (window.location.pathname !== nextPath) {
+        window.history.replaceState(nextView, '', nextPath);
+      }
+      setView(nextView);
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   function nav(next) {
-    setView({ view: next.view, slug: next.slug });
+    const nextView = { view: next.view, slug: next.slug };
+    const nextPath = getPathForView(nextView);
+    const currentPath = getPathForView(view);
+
+    if (nextPath !== currentPath) {
+      window.history.pushState(nextView, '', nextPath);
+    }
+
+    setView(nextView);
     requestAnimationFrame(() => {
       if (next.anchor === 'about') {
         document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });

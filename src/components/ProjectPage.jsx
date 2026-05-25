@@ -266,10 +266,9 @@ export default function ProjectPage({ slug, onNav, t }) {
           }}
         >
           {p.images.stack.slice(1, -1).map((src, i) => (
-            <img  
-              src={project.images.stack[i + 1]}
+            <img
+              src={src}
               key={i}
-              // src={src}
               alt={`${p.name} — ${i + 2}`}
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
@@ -303,7 +302,7 @@ export default function ProjectPage({ slug, onNav, t }) {
                 }}
               >
                 <img
-                  src={project.images.mid[i]}
+                  src={src}
                   alt={`${p.name} — detail ${i + 1}`}
                   style={{
                     width: '100%',
