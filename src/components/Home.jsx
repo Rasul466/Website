@@ -308,7 +308,7 @@ export default function Home({ onNav, t }) {
           >
             {projects[5].thumb && (
               <img
-               
+                src={projects[5].thumb}
                 alt={projects[5].name}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
