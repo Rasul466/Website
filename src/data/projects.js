@@ -1,20 +1,22 @@
 // Project data for Rasul's portfolio (English base).
 // Russian overrides live in ./translations.js (RU_PROJECTS).
 
+const asset = (name) => `${import.meta.env.BASE_URL}${name}`;
+
 export const PROJECTS = [
   {
     slug: "wallet-onboarding",
     images: {
-      hero: '/installment - main.png',
+      hero: asset('installment - main.png'),
       mid: [
-        '/installment - before.png',
-        '/installment - after.png',
+        asset('installment - before.png'),
+        asset('installment - after.png'),
       ],
-      full: '/installment - full.png',
+      full: asset('installment - full.png'),
     },
     name: "Open Installment",
     sector: "BNPL",
-    thumb: '/installment.png',
+    thumb: asset('installment.png'),
     cardSize: "wide",
     swatch: "#DDD4BE",
     aspect: "16/10",
@@ -55,16 +57,16 @@ export const PROJECTS = [
   {
     slug: "pay-later-everyday",
     images: {
-      hero: '/system - main.png',
+      hero: asset('system - main.png'),
       mid: [
-        '/system - before.png',
-        '/system - after.png',
+        asset('system - before.png'),
+        asset('system - after.png'),
       ],
-      full: '/system - full.png',
+      full: asset('system - full.png'),
     },
     name: "Open System",
     sector: "Design system",
-    thumb: '/system.png',
+    thumb: asset('system.png'),
     cardSize: "tall",
     swatch: "#C9C0AB",
     aspect: "4/5",
@@ -106,16 +108,16 @@ export const PROJECTS = [
   {
     slug: "credit-console",
     images: {
-      hero: '/map - main.png',
+      hero: asset('map - main.png'),
       mid: [
-        '/map - before.png',
-        '/map - after.png',
+        asset('map - before.png'),
+        asset('map - after.png'),
       ],
-      full: '/map - full.png',
+      full: asset('map - full.png'),
     },
     name: "Merchant's map",
     sector: "BNPL",
-    thumb: '/merchantmap.png',
+    thumb: asset('merchantmap.png'),
     cardSize: "square",
     swatch: "#B8AE96",
     aspect: "1/1",
@@ -158,14 +160,14 @@ export const PROJECTS = [
     slug: "microinvest",
     images: {
       stack: [
-        '/merchant - main.png',
-        '/merchant - figjam.png',
-        '/merchant - full.png',
+        asset('merchant - main.png'),
+        asset('merchant - figjam.png'),
+        asset('merchant - full.png'),
       ],
     },
     name: "Open Merchant",
     sector: "BNPL",
-    thumb: '/openmerchant.png',
+    thumb: asset('openmerchant.png'),
     cardSize: "square",
     swatch: "#DCD3BD",
     aspect: "1/1",
@@ -208,14 +210,14 @@ export const PROJECTS = [
     slug: "rewards",
     images: {
       stack: [
-        '/med - main.png',
-        '/med - second.png',
-        '/med - third.png',
+        asset('med - main.png'),
+        asset('med - second.png'),
+        asset('med - third.png'),
       ],
     },
     name: "VIVA Med",
     sector: "MedTech",
-    thumb: '/vivamed.png',
+    thumb: asset('vivamed.png'),
     cardSize: "square-wide",
     swatch: "#D2C8B0",
     aspect: "4/3",
@@ -255,14 +257,14 @@ export const PROJECTS = [
     slug: "bnpl-platform",
     images: {
       stack: [
-        '/fintech - main.png',
-        '/fintech - second.png',
-        '/fintech - third.png',
+        asset('fintech - main.png'),
+        asset('fintech - second.png'),
+        asset('fintech - third.png'),
       ],
     },
     name: "A-Pay",
     sector: "Fintech",
-    thumb: '/apay.png',
+    thumb: asset('apay.png'),
     cardSize: "featured",
     swatch: "#C8BFA8",
     aspect: "21/9",
@@ -301,6 +303,6 @@ export const PROJECTS = [
 
 // Hosted image assets used outside project data
 export const ASSETS = {
-  logo: '/logo.png',
-  portrait: '/portrait.png',
+  logo: asset('logo.png'),
+  portrait: asset('portrait.png'),
 };
