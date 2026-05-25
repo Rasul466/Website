@@ -5,16 +5,16 @@ export const PROJECTS = [
   {
     slug: "wallet-onboarding",
     images: {
-      hero: "https://i.postimg.cc/bvk3B6wT/installment-main.png",
+      hero: src='../../public/installment-main.png',
       mid: [
-        "https://i.postimg.cc/6pDMzst8/installment-before.png",
-        "https://i.postimg.cc/BndmNW48/installment-after.png",
+        src='../../public/installment-before.png',
+        src='../../public/installment-after.png',
       ],
-      full: "https://i.postimg.cc/R0KXDPZf/installment-full.png",
+      full: src='../../public/installment-full.png',
     },
     name: "Open Installment",
     sector: "BNPL",
-    thumb: "https://i.postimg.cc/JnWxjbmF/installment.png",
+    thumb: src='../../public/installment.png',
     cardSize: "wide",
     swatch: "#DDD4BE",
     aspect: "16/10",
@@ -55,16 +55,16 @@ export const PROJECTS = [
   {
     slug: "pay-later-everyday",
     images: {
-      hero: "https://i.postimg.cc/HnZ2yR6H/system-main.png",
+      hero: src='../../public/system-main.png',
       mid: [
-        "https://i.postimg.cc/JhZP2Tzv/system-before.png",
-        "https://i.postimg.cc/tgW2Mr4z/system-after.png",
+        src='../../public/system-before.png',
+        src='../../public/system-after.png',
       ],
-      full: "https://i.postimg.cc/Ss4DFWXX/system-full.png",
+      full: src='../../public/system-full.png',
     },
     name: "Open System",
     sector: "Design system",
-    thumb: "https://i.postimg.cc/MpNdKCFh/system.png",
+    thumb: src='../../public/system.png',
     cardSize: "tall",
     swatch: "#C9C0AB",
     aspect: "4/5",
@@ -106,16 +106,16 @@ export const PROJECTS = [
   {
     slug: "credit-console",
     images: {
-      hero: "https://i.postimg.cc/sxDm1s4V/map-main.png",
+      hero: src='../../public/map-main.png',
       mid: [
-        "https://i.postimg.cc/W4gXH915/map-before.png",
-        "https://i.postimg.cc/25h2KHSW/map-after.png",
+        src='../../public/map-before.png',
+        src='../../public/map-after.png',
       ],
-      full: "https://i.postimg.cc/QtD0GpBG/map-full.png",
+      full: src='../../public/map-full.png',
     },
     name: "Merchant's map",
     sector: "BNPL",
-    thumb: "https://i.postimg.cc/L43CB0qM/merchantmap.png",
+    thumb: src='../../public/merchantmap.png',
     cardSize: "square",
     swatch: "#B8AE96",
     aspect: "1/1",
@@ -158,14 +158,14 @@ export const PROJECTS = [
     slug: "microinvest",
     images: {
       stack: [
-        "https://i.postimg.cc/5tLnRP2B/merchant-main.png",
-        "https://i.postimg.cc/zG9xpm8B/merchant-figjam.png",
-        "https://i.postimg.cc/QdRfSLhM/merchant-full.png",
+        src='../../public/merchant-main.png',
+        src='../../public/merchant-figjam.png',
+        src='../../public/merchant-full.png',
       ],
     },
     name: "Open Merchant",
     sector: "BNPL",
-    thumb: "https://i.postimg.cc/9FxLsRtd/openmerchant.png",
+    thumb: src='../../public/openmerchant.png',
     cardSize: "square",
     swatch: "#DCD3BD",
     aspect: "1/1",
@@ -208,14 +208,14 @@ export const PROJECTS = [
     slug: "rewards",
     images: {
       stack: [
-        "https://i.postimg.cc/zvtjg6xh/med-main.png",
-        "https://i.postimg.cc/FzWZL8T7/med-second.png",
-        "https://i.postimg.cc/3xyLgr5d/med-third.png",
+        src='../../public/med-main.png',
+        src='../../public/med-second.png',
+        src='../../public/med-third.png',
       ],
     },
     name: "VIVA Med",
     sector: "MedTech",
-    thumb: "https://i.postimg.cc/QM7SB6L9/vivamed.png",
+    thumb: src='../../public/vivamed.png',
     cardSize: "square-wide",
     swatch: "#D2C8B0",
     aspect: "4/3",
@@ -255,14 +255,14 @@ export const PROJECTS = [
     slug: "bnpl-platform",
     images: {
       stack: [
-        "https://i.postimg.cc/rw0TZtt6/fintech-main.png",
-        "https://i.postimg.cc/q72T4VL2/fintech-second.png",
-        "https://i.postimg.cc/d0GYwPBy/fintech-third.png",
+        src='../../public/fintech-main.png',
+        src='../../public/fintech-second.png',
+        src='../../public/fintech-third.png',
       ],
     },
     name: "A-Pay",
     sector: "Fintech",
-    thumb: "https://i.postimg.cc/FRQp0jNK/apay.png",
+    thumb: src='../../public/apay.png',
     cardSize: "featured",
     swatch: "#C8BFA8",
     aspect: "21/9",
@@ -301,6 +301,6 @@ export const PROJECTS = [
 
 // Hosted image assets used outside project data
 export const ASSETS = {
-  logo: "https://i.postimg.cc/TY7JPzsD/logo.png",
-  portrait: "https://i.postimg.cc/C56SZMkY/rasul.png",
+  logo: src='../../public/logo.png',
+  portrait: src='../../public/rasul.png',
 };

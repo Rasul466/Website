@@ -28,7 +28,7 @@ export default function Header({ onNav, current }) {
         onClick={() => onNav({ view: 'home' })}
       >
         <img
-          src={ASSETS.logo}
+          src='../../public/logo.png'
           alt="Rasul Rustamov"
           style={{ height: 28, width: 'auto', display: 'block' }}
         />
