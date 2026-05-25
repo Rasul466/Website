@@ -5,16 +5,16 @@ export const PROJECTS = [
   {
     slug: "wallet-onboarding",
     images: {
-      hero: src='../../public/installment-main.png',
+      hero: '/installment - main.png',
       mid: [
-        src='../../public/installment-before.png',
-        src='../../public/installment-after.png',
+        '/installment - before.png',
+        '/installment - after.png',
       ],
-      full: src='../../public/installment-full.png',
+      full: '/installment - full.png',
     },
     name: "Open Installment",
     sector: "BNPL",
-    thumb: src='../../public/installment.png',
+    thumb: '/installment.png',
     cardSize: "wide",
     swatch: "#DDD4BE",
     aspect: "16/10",
@@ -55,16 +55,16 @@ export const PROJECTS = [
   {
     slug: "pay-later-everyday",
     images: {
-      hero: src='../../public/system-main.png',
+      hero: '/system - main.png',
       mid: [
-        src='../../public/system-before.png',
-        src='../../public/system-after.png',
+        '/system - before.png',
+        '/system - after.png',
       ],
-      full: src='../../public/system-full.png',
+      full: '/system - full.png',
     },
     name: "Open System",
     sector: "Design system",
-    thumb: src='../../public/system.png',
+    thumb: '/system.png',
     cardSize: "tall",
     swatch: "#C9C0AB",
     aspect: "4/5",
@@ -106,16 +106,16 @@ export const PROJECTS = [
   {
     slug: "credit-console",
     images: {
-      hero: src='../../public/map-main.png',
+      hero: '/map - main.png',
       mid: [
-        src='../../public/map-before.png',
-        src='../../public/map-after.png',
+        '/map - before.png',
+        '/map - after.png',
       ],
-      full: src='../../public/map-full.png',
+      full: '/map - full.png',
     },
     name: "Merchant's map",
     sector: "BNPL",
-    thumb: src='../../public/merchantmap.png',
+    thumb: '/merchantmap.png',
     cardSize: "square",
     swatch: "#B8AE96",
     aspect: "1/1",
@@ -158,14 +158,14 @@ export const PROJECTS = [
     slug: "microinvest",
     images: {
       stack: [
-        src='../../public/merchant-main.png',
-        src='../../public/merchant-figjam.png',
-        src='../../public/merchant-full.png',
+        '/merchant - main.png',
+        '/merchant - figjam.png',
+        '/merchant - full.png',
       ],
     },
     name: "Open Merchant",
     sector: "BNPL",
-    thumb: src='../../public/openmerchant.png',
+    thumb: '/openmerchant.png',
     cardSize: "square",
     swatch: "#DCD3BD",
     aspect: "1/1",
@@ -208,14 +208,14 @@ export const PROJECTS = [
     slug: "rewards",
     images: {
       stack: [
-        src='../../public/med-main.png',
-        src='../../public/med-second.png',
-        src='../../public/med-third.png',
+        '/med - main.png',
+        '/med - second.png',
+        '/med - third.png',
       ],
     },
     name: "VIVA Med",
     sector: "MedTech",
-    thumb: src='../../public/vivamed.png',
+    thumb: '/vivamed.png',
     cardSize: "square-wide",
     swatch: "#D2C8B0",
     aspect: "4/3",
@@ -255,14 +255,14 @@ export const PROJECTS = [
     slug: "bnpl-platform",
     images: {
       stack: [
-        src='../../public/fintech-main.png',
-        src='../../public/fintech-second.png',
-        src='../../public/fintech-third.png',
+        '/fintech - main.png',
+        '/fintech - second.png',
+        '/fintech - third.png',
       ],
     },
     name: "A-Pay",
     sector: "Fintech",
-    thumb: src='../../public/apay.png',
+    thumb: '/apay.png',
     cardSize: "featured",
     swatch: "#C8BFA8",
     aspect: "21/9",
@@ -301,6 +301,6 @@ export const PROJECTS = [
 
 // Hosted image assets used outside project data
 export const ASSETS = {
-  logo: src='../../public/logo.png',
-  portrait: src='../../public/rasul.png',
+  logo: '/logo.png',
+  portrait: '/portrait.png',
 };

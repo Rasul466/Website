@@ -129,7 +129,7 @@ export default function Home({ onNav, t }) {
             }}
           >
             <img
-              src='../../public/portrait.png'
+              src={ASSETS.portrait}
               alt="Rasul"
               style={{
                 width: '100%',
