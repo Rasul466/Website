@@ -23,23 +23,14 @@ const BASE_PATH = import.meta.env.BASE_URL.endsWith('/')
   ? import.meta.env.BASE_URL.slice(0, -1)
   : import.meta.env.BASE_URL;
 
-function stripBasePath(pathname) {
-  if (!BASE_PATH || BASE_PATH === '/') return pathname;
-  if (pathname === BASE_PATH) return '/';
-  if (pathname.startsWith(`${BASE_PATH}/`)) {
-    return pathname.slice(BASE_PATH.length);
-  }
-  return pathname;
-}
-
 function getViewFromLocation() {
-  const slug = stripBasePath(window.location.pathname).replace(/^\/+|\/+$/g, '');
+  const slug = window.location.hash.replace(/^#\/?/, '').replace(/^\/+|\/+$/g, '');
   return !slug || slug === 'home' ? { view: 'home' } : { view: 'project', slug };
 }
 
 function getPathForView(next) {
   const leaf = next.view === 'project' && next.slug ? next.slug : 'home';
-  return BASE_PATH && BASE_PATH !== '/' ? `${BASE_PATH}/${leaf}` : `/${leaf}`;
+  return `${BASE_PATH || ''}#/${leaf}`;
 }
 
 export default function App() {
@@ -47,15 +38,18 @@ export default function App() {
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
 
   useEffect(() => {
-    const canonicalPath = getPathForView(getViewFromLocation());
-    if (window.location.pathname !== canonicalPath) {
-      window.history.replaceState(getViewFromLocation(), '', canonicalPath);
+    const nextView = getViewFromLocation();
+    const canonicalPath = getPathForView(nextView);
+    const currentPath = `${window.location.pathname}${window.location.hash}`;
+    if (currentPath !== canonicalPath) {
+      window.history.replaceState(nextView, '', canonicalPath);
     }
 
-    const handlePopState = () => {
+    const handleRouteChange = () => {
       const nextView = getViewFromLocation();
       const nextPath = getPathForView(nextView);
-      if (window.location.pathname !== nextPath) {
+      const currentPath = `${window.location.pathname}${window.location.hash}`;
+      if (currentPath !== nextPath) {
         window.history.replaceState(nextView, '', nextPath);
       }
       setView(nextView);
@@ -64,8 +58,12 @@ export default function App() {
       });
     };
 
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener('hashchange', handleRouteChange);
+    return () => {
+      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener('hashchange', handleRouteChange);
+    };
   }, []);
 
   function nav(next) {
