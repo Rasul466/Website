@@ -11,14 +11,7 @@ export function TweaksPanel({ title = 'Tweaks', children }) {
 
   if (!open) {
     return (
-      <button
-        type="button"
-        className="tweaks-trigger"
-        onClick={() => setOpen(true)}
-        aria-label="Open tweaks panel"
-      >
-        ✦ Tweaks
-      </button>
+      <div></div>
     );
   }
 
