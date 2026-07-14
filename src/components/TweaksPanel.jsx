@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export function useTweaks(defaults) {
   const [values, setValues] = useState(defaults);
@@ -9,26 +10,30 @@ export function useTweaks(defaults) {
 export function TweaksPanel({ title = 'Tweaks', children }) {
   const [open, setOpen] = useState(false);
 
-  if (!open) {
-    return (
-      <div></div>
-    );
-  }
-
   return (
-    <div className="twk-panel">
-      <div className="twk-hd">
-        <b>{title}</b>
-        <button
-          className="twk-x"
-          aria-label="Close tweaks"
-          onClick={() => setOpen(false)}
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="twk-panel"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 16 }}
+          transition={{ duration: 0.25, ease: [0.22, 0.61, 0.36, 1] }}
         >
-          ✕
-        </button>
-      </div>
-      <div className="twk-body">{children}</div>
-    </div>
+          <div className="twk-hd">
+            <b>{title}</b>
+            <button
+              className="twk-x"
+              aria-label="Close tweaks"
+              onClick={() => setOpen(false)}
+            >
+              ✕
+            </button>
+          </div>
+          <div className="twk-body">{children}</div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

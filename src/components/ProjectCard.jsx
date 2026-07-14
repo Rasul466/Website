@@ -1,11 +1,18 @@
+import { motion } from 'framer-motion';
+
 export default function ProjectCard({ p, onNav, italicHeads, small }) {
   const titleSize = 24;
   const captionSize = 16;
   return (
     <div>
-      <div
+      <motion.div
         onClick={() => onNav({ view: 'project', slug: p.slug })}
         className="rp project-thumb"
+        whileHover="hover"
+        initial="rest"
+        animate="rest"
+        variants={{ rest: { scale: 1 }, hover: { scale: 1.02 } }}
+        transition={{ duration: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
         style={{
           aspectRatio: p.aspect,
           background: p.swatch,
@@ -24,16 +31,18 @@ export default function ProjectCard({ p, onNav, italicHeads, small }) {
         }}
       >
         {p.thumb ? (
-          <img
+          <motion.img
             src={p.thumb}
             alt={p.name}
             loading="lazy"
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.08 } }}
+            transition={{ duration: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
         ) : (
           `project shot — ${p.name.toLowerCase()}`
         )}
-      </div>
+      </motion.div>
       {small ? (
         <>
           <h3

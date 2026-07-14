@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header.jsx';
 import Home from './components/Home.jsx';
 import ProjectPage from './components/ProjectPage.jsx';
@@ -93,11 +94,29 @@ export default function App() {
     <>
       <div className="container">
         <Header onNav={nav} current={view.view} />
-        {view.view === 'home' ? (
-          <Home onNav={nav} t={tweaks} />
-        ) : (
-          <ProjectPage slug={view.slug} onNav={nav} t={tweaks} />
-        )}
+        <AnimatePresence mode="wait">
+          {view.view === 'home' ? (
+            <motion.div
+              key="home"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+            >
+              <Home onNav={nav} t={tweaks} />
+            </motion.div>
+          ) : (
+            <motion.div
+              key={`project-${view.slug}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+            >
+              <ProjectPage slug={view.slug} onNav={nav} t={tweaks} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <LangSwitch />

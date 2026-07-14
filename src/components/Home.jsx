@@ -1,8 +1,35 @@
 import { Fragment } from 'react';
+import { motion } from 'framer-motion';
 import { useLang } from '../hooks/useLang.jsx';
 import { PROJECTS, ASSETS } from '../data/projects.js';
 import { getProject } from '../data/translations.js';
 import ProjectCard from './ProjectCard.jsx';
+
+const EASE = [0.22, 0.61, 0.36, 1];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+};
+
+const wordVariants = {
+  hidden: { opacity: 0, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
+};
+
+function StaggerWords({ text }) {
+  const words = text.split(' ');
+  return words.map((word, i) => (
+    <motion.span
+      key={`${word}-${i}`}
+      variants={wordVariants}
+      style={{ display: 'inline-block', whiteSpace: 'pre' }}
+    >
+      {word}
+      {i < words.length - 1 ? ' ' : ''}
+    </motion.span>
+  ));
+}
 
 function Particulars({ rows }) {
   return (
@@ -58,7 +85,10 @@ export default function Home({ onNav, t }) {
         }}
       >
         <div style={{ gridColumn: heroColumn, textAlign: heroTextAlign }}>
-          <h1
+          <motion.h1
+            initial="hidden"
+            animate="show"
+            variants={{ show: { transition: { staggerChildren: 0.035, delayChildren: 0.05 } } }}
             style={{
               fontSize: 30,
               lineHeight: 1.3,
@@ -68,7 +98,7 @@ export default function Home({ onNav, t }) {
               textWrap: 'pretty',
             }}
           >
-            {S.hero.pre}
+            <StaggerWords text={S.hero.pre} />
             <br />
             <span
               style={{
@@ -77,10 +107,10 @@ export default function Home({ onNav, t }) {
                 marginRight: '0.32em',
               }}
             >
-              {S.hero.italic}
+              <StaggerWords text={S.hero.italic} />
             </span>
-            {S.hero.post}
-          </h1>
+            <StaggerWords text={S.hero.post} />
+          </motion.h1>
           <p
             style={{
               fontSize: body,
@@ -96,9 +126,13 @@ export default function Home({ onNav, t }) {
       </div>
 
       {/* About */}
-      <div
+      <motion.div
         id="about"
         className="rp"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
@@ -175,11 +209,15 @@ export default function Home({ onNav, t }) {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Hiring & Mentorship */}
-      <div
+      <motion.div
         className="rp"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(12, 1fr)',
@@ -230,7 +268,7 @@ export default function Home({ onNav, t }) {
             <span style={{ fontStyle: 'italic' }}>{S.hiring.role}</span>
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Selected work header */}
       <div
@@ -351,9 +389,13 @@ export default function Home({ onNav, t }) {
       </div>
 
       {/* Contact */}
-      <div
+      <motion.div
         id="contact"
         className="rp"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={fadeUp}
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 2fr',
@@ -448,11 +490,14 @@ export default function Home({ onNav, t }) {
               ],
             ].map(([label, href]) => (
               <li key={label}>
-                <a
+                <motion.a
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-link"
+                  whileHover={{ x: 6, scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: 'spring', stiffness: 420, damping: 18 }}
                   style={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -474,12 +519,12 @@ export default function Home({ onNav, t }) {
                   >
                     →
                   </span>
-                </a>
+                </motion.a>
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
