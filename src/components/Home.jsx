@@ -444,7 +444,7 @@ export default function Home({ onNav, t }) {
               ],
               [
                 'CV',
-                'https://drive.google.com/file/d/1diyPayzpyxSnUhp90L5AbqFP0Cssb6wk/view',
+                'https://drive.google.com/file/d/171y7O7mAvGwnT3xo2YHh3Yo0L1V_h154/view?usp=sharing',
               ],
             ].map(([label, href]) => (
               <li key={label}>
