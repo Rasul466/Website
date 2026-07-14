@@ -83,8 +83,8 @@ export default function App() {
         document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else if (next.anchor === 'projects') {
         document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+       } else {
+        window.scrollTo({ top: 0, behavior: 'auto' });
       }
     });
   }
