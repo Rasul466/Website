@@ -1,10 +1,20 @@
 import { motion } from 'framer-motion';
 
+const cardEntrance = {
+  hidden: { opacity: 0, y: 56, scale: 0.96 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.7, ease: [0.22, 0.61, 0.36, 1] },
+  },
+};
+
 export default function ProjectCard({ p, onNav, italicHeads, small }) {
   const titleSize = 24;
   const captionSize = 16;
   return (
-    <div>
+    <motion.div variants={cardEntrance}>
       <motion.div
         onClick={() => onNav({ view: 'project', slug: p.slug })}
         className="rp project-thumb"
@@ -109,6 +119,6 @@ export default function ProjectCard({ p, onNav, italicHeads, small }) {
           </p>
         </>
       )}
-    </div>
+    </motion.div>
   );
 }

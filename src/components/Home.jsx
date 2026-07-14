@@ -8,13 +8,18 @@ import ProjectCard from './ProjectCard.jsx';
 const EASE = [0.22, 0.61, 0.36, 1];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+  hidden: { opacity: 0, y: 64, scale: 0.97 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: EASE } },
+};
+
+const rowContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.16 } },
 };
 
 const wordVariants = {
-  hidden: { opacity: 0, y: 10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: EASE } },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE } },
 };
 
 function StaggerWords({ text }) {
@@ -271,9 +276,13 @@ export default function Home({ onNav, t }) {
       </motion.div>
 
       {/* Selected work header */}
-      <div
+      <motion.div
         id="projects"
         className="rp"
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.4 }}
+        variants={fadeUp}
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -293,10 +302,14 @@ export default function Home({ onNav, t }) {
         >
           {S.selectedWork}
         </h2>
-      </div>
+      </motion.div>
 
       {/* Row 1 — wide + tall */}
-      <div
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={rowContainer}
         style={{
           display: 'grid',
           gridTemplateColumns: '5fr 4fr',
@@ -306,10 +319,14 @@ export default function Home({ onNav, t }) {
       >
         <ProjectCard p={projects[0]} onNav={onNav} italicHeads={italicHeads} />
         <ProjectCard p={projects[1]} onNav={onNav} italicHeads={italicHeads} />
-      </div>
+      </motion.div>
 
       {/* Row 2 — three squares */}
-      <div
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={rowContainer}
         style={{
           display: 'grid',
           gridTemplateColumns: '3fr 3fr 4fr',
@@ -320,10 +337,16 @@ export default function Home({ onNav, t }) {
         <ProjectCard p={projects[2]} onNav={onNav} italicHeads={italicHeads} small />
         <ProjectCard p={projects[3]} onNav={onNav} italicHeads={italicHeads} small />
         <ProjectCard p={projects[4]} onNav={onNav} italicHeads={italicHeads} small />
-      </div>
+      </motion.div>
 
       {/* Row 3 — featured offset */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 5fr', gap: 28 }}>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.15 }}
+        variants={fadeUp}
+        style={{ display: 'grid', gridTemplateColumns: '2fr 5fr', gap: 28 }}
+      >
         <div></div>
         <div>
           <div
@@ -386,7 +409,7 @@ export default function Home({ onNav, t }) {
             {projects[5].cardCopy}
           </p>
         </div>
-      </div>
+      </motion.div>
 
       {/* Contact */}
       <motion.div

@@ -1,6 +1,14 @@
+import { motion } from 'framer-motion';
 import { useLang } from '../hooks/useLang.jsx';
 import { PROJECTS } from '../data/projects.js';
 import { getProject } from '../data/translations.js';
+
+const EASE = [0.22, 0.61, 0.36, 1];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 64, scale: 0.97 },
+  show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.8, ease: EASE } },
+};
 
 // ── Color helpers ──────────────────────────────
 function deepen(hex) {
@@ -61,8 +69,12 @@ function Meta({ k, v }) {
 
 function Section({ label, children }) {
   return (
-    <div
+    <motion.div
       className="rp"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeUp}
       style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(12, 1fr)',
@@ -83,7 +95,7 @@ function Section({ label, children }) {
         </p>
       </div>
       <div style={{ gridColumn: '4 / 11' }}>{children}</div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -257,7 +269,11 @@ export default function ProjectPage({ slug, onNav, t }) {
 
       {/* Stack part 1 — middle photos between Context and Approach */}
       {isStack && p.images.stack.length > 2 && (
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -273,13 +289,17 @@ export default function ProjectPage({ slug, onNav, t }) {
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           ))}
-        </div>
+        </motion.div>
       )}
 
       {/* Mid grid (before/after) — only when no stack */}
       {p.images && p.images.mid && p.images.mid.length > 0 && (
         <>
-          <div
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={fadeUp}
             style={{
               display: 'grid',
               gridTemplateColumns:
@@ -313,7 +333,7 @@ export default function ProjectPage({ slug, onNav, t }) {
                 />
               </div>
             ))}
-          </div>
+          </motion.div>
           <p
             className="rp"
             style={{
@@ -347,7 +367,13 @@ export default function ProjectPage({ slug, onNav, t }) {
 
       {/* Full-bleed diagram — only when no stack */}
       {p.images && p.images.full && (
-        <div style={{ margin: '64px 0 96px' }}>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          style={{ margin: '64px 0 96px' }}
+        >
           <div
             className="rp"
             style={{
@@ -370,18 +396,24 @@ export default function ProjectPage({ slug, onNav, t }) {
               }}
             />
           </div>
-        </div>
+        </motion.div>
       )}
 
       {/* Stack part 2 — last photo between Approach and Outcome */}
       {isStack && p.images.stack.length > 1 && (
-        <div style={{ margin: '64px 0 96px' }}>
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={fadeUp}
+          style={{ margin: '64px 0 96px' }}
+        >
           <img
             src ={p.images.stack[p.images.stack.length - 1]}
             alt={`${p.name} — ${p.images.stack.length}`}
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
-        </div>
+        </motion.div>
       )}
 
       {/* Outcome */}
@@ -456,8 +488,12 @@ export default function ProjectPage({ slug, onNav, t }) {
 
       {/* Next project */}
       {nextP && (
-        <div
+        <motion.div
           className="rp"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeUp}
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr',
@@ -508,7 +544,7 @@ export default function ProjectPage({ slug, onNav, t }) {
               {nextP.cardCopy}
             </p>
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
