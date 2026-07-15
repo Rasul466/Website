@@ -38,6 +38,19 @@ function getPathForView(next) {
   return `${BASE_PATH || ''}${leaf}`;
 }
 
+// Waits for an anchor's element to exist before scrolling — needed because
+// AnimatePresence (mode="wait") delays mounting the next page until the
+// current one finishes its exit animation, so the element isn't in the DOM
+// on the very next frame when navigating in from a different page.
+function scrollToAnchorWhenReady(id, attemptsLeft = 90) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else if (attemptsLeft > 0) {
+    requestAnimationFrame(() => scrollToAnchorWhenReady(id, attemptsLeft - 1));
+  }
+}
+
 export default function App() {
   const [view, setView] = useState(() => getViewFromLocation());
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
@@ -82,17 +95,13 @@ export default function App() {
     }
 
     setView(nextView);
-    requestAnimationFrame(() => {
-      if (next.anchor === 'about') {
-        document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else if (next.anchor === 'contact') {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else if (next.anchor === 'projects') {
-        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-       } else {
+    if (next.anchor === 'about' || next.anchor === 'contact' || next.anchor === 'projects') {
+      requestAnimationFrame(() => scrollToAnchorWhenReady(next.anchor));
+    } else {
+      requestAnimationFrame(() => {
         window.scrollTo({ top: 0, behavior: 'auto' });
-      }
-    });
+      });
+    }
   }
 
   return (
