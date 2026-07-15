@@ -5,27 +5,27 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rasul.work/wallet-onboarding</loc>
+    <loc>https://rasul.work/installment</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rasul.work/pay-later-everyday</loc>
+    <loc>https://rasul.work/design-system</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rasul.work/credit-console</loc>
+    <loc>https://rasul.work/merchant-map</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rasul.work/microinvest</loc>
+    <loc>https://rasul.work/merchant-app</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rasul.work/rewards</loc>
+    <loc>https://rasul.work/med-tech</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rasul.work/bnpl-platform</loc>
+    <loc>https://rasul.work/fintech-product</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

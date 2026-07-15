@@ -102,7 +102,7 @@ export const STRINGS = {
 
 // Russian per-project overrides. Spread over the base English project.
 export const RU_PROJECTS = {
-  "wallet-onboarding": {
+  "installment": {
     name: "Open Installment",
     sector: "BNPL",
     cardCopy: "Приложение для покупок в рассрочку.",
@@ -137,7 +137,7 @@ export const RU_PROJECTS = {
     },
   },
 
-  "pay-later-everyday": {
+  "design-system": {
     name: "Open System",
     sector: "Дизайн-система",
     cardCopy: "Дизайн-система для компании Open.",
@@ -175,7 +175,7 @@ export const RU_PROJECTS = {
     },
   },
 
-  "credit-console": {
+  "merchant-map": {
     name: "Merchant's map",
     sector: "BNPL",
     cardCopy: "Интерактивная карта для поиска магазинов.",
@@ -213,7 +213,7 @@ export const RU_PROJECTS = {
     },
   },
 
-  "microinvest": {
+  "merchant-app": {
     name: "Open Merchant",
     sector: "BNPL",
     cardCopy: "Приложение для мерчантов.",
@@ -251,7 +251,7 @@ export const RU_PROJECTS = {
     },
   },
 
-  "rewards": {
+  "med-tech": {
     name: "VIVA Med",
     sector: "MedTech",
     cardCopy: "ERP-система для медицинской клиники.",
@@ -286,7 +286,7 @@ export const RU_PROJECTS = {
     },
   },
 
-  "bnpl-platform": {
+  "fintech-product": {
     name: "A-Pay",
     sector: "Финтех",
     cardCopy: "Приложение и аналитический модуль для финтех-продукта.",

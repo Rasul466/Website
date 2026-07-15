@@ -5,7 +5,7 @@ const asset = (name) => `${import.meta.env.BASE_URL}${name}`;
 
 export const PROJECTS = [
   {
-    slug: "wallet-onboarding",
+    slug: "installment",
     images: {
       hero: asset('installment - main.webp'),
       mid: [
@@ -55,7 +55,7 @@ export const PROJECTS = [
   },
 
   {
-    slug: "pay-later-everyday",
+    slug: "design-system",
     images: {
       hero: asset('system - main.webp'),
       mid: [
@@ -106,7 +106,7 @@ export const PROJECTS = [
   },
 
   {
-    slug: "credit-console",
+    slug: "merchant-map",
     images: {
       hero: asset('map - main.webp'),
       mid: [
@@ -157,7 +157,7 @@ export const PROJECTS = [
   },
 
   {
-    slug: "microinvest",
+    slug: "merchant-app",
     images: {
       stack: [
         asset('merchant - main.webp'),
@@ -207,7 +207,7 @@ export const PROJECTS = [
   },
 
   {
-    slug: "rewards",
+    slug: "med-tech",
     images: {
       stack: [
         asset('med - main.webp'),
@@ -254,7 +254,7 @@ export const PROJECTS = [
   },
 
   {
-    slug: "bnpl-platform",
+    slug: "fintech-product",
     images: {
       stack: [
         asset('fintech - main.webp'),
