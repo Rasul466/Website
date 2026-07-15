@@ -41,7 +41,7 @@ export default function Header({ onNav, current }) {
           {S.nav.about}
         </span>
         <span
-          style={linkStyle(current === 'home')}
+          style={linkStyle(false)}
           onClick={() => onNav({ view: 'home', anchor: 'projects' })}
         >
           {S.nav.projects}
