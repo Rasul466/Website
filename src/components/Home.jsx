@@ -135,8 +135,7 @@ export default function Home({ onNav, t }) {
         id="about"
         className="rp"
         initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
+        animate="show"
         variants={fadeUp}
         style={{
           display: 'grid',
@@ -158,12 +157,7 @@ export default function Home({ onNav, t }) {
           </p>
         </div>
 
-        <motion.div
-          style={{ gridColumn: '3 / 7' }}
-          initial={{ opacity: 0, y: 40, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: EASE, delay: 0.1 }}
-        >
+        <div style={{ gridColumn: '3 / 7' }}>
           <div
             style={{
               aspectRatio: '4/5',
@@ -185,7 +179,7 @@ export default function Home({ onNav, t }) {
               }}
             />
           </div>
-        </motion.div>
+        </div>
 
         <div style={{ gridColumn: '8 / 13', paddingTop: 24 }}>
           <p
