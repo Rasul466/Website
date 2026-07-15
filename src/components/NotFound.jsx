@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '../hooks/useLang.jsx';
 
@@ -6,6 +7,12 @@ const EASE = [0.22, 0.61, 0.36, 1];
 export default function NotFound({ onNav }) {
   const { S } = useLang();
   const nf = S.notFound;
+
+  useEffect(() => {
+    if (window.location.pathname !== '/404') {
+      window.history.replaceState(null, '', '/404');
+    }
+  }, []);
 
   return (
     <div data-screen-label="04 Not found">
@@ -45,6 +52,7 @@ export default function NotFound({ onNav }) {
           >
             {nf.pre}
             <span style={{ fontStyle: 'italic', opacity: 0.7 }}>{nf.italic}</span>
+            <br />
             {nf.post}
           </h1>
           <p

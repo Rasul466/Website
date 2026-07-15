@@ -52,7 +52,7 @@ export const STRINGS = {
       eyebrow: "404",
       pre: "This page went ",
       italic: "somewhere else",
-      post: " — or maybe never existed at all.",
+      post: "— or maybe never existed at all.",
       description:
         "Check the link, or head back and pick a project from the list.",
       button: "Back to home",
@@ -110,7 +110,7 @@ export const STRINGS = {
       eyebrow: "404",
       pre: "Эта страница ",
       italic: "потерялась",
-      post: " — или её никогда не было.",
+      post: "— или её никогда не было.",
       description:
         "Проверьте ссылку или вернитесь на главную и выберите проект из списка.",
       button: "На главную",
