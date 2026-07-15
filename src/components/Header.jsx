@@ -35,16 +35,16 @@ export default function Header({ onNav, current }) {
       </span>
       <span style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
         <span
-          style={linkStyle(current === 'home')}
-          onClick={() => onNav({ view: 'home', anchor: 'projects' })}
-        >
-          {S.nav.projects}
-        </span>
-        <span
           style={linkStyle(false)}
           onClick={() => onNav({ view: 'home', anchor: 'about' })}
         >
           {S.nav.about}
+        </span>
+        <span
+          style={linkStyle(current === 'home')}
+          onClick={() => onNav({ view: 'home', anchor: 'projects' })}
+        >
+          {S.nav.projects}
         </span>
         <span
           style={linkStyle(false)}
