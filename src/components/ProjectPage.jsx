@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useLang } from '../hooks/useLang.jsx';
 import { PROJECTS } from '../data/projects.js';
 import { getProject } from '../data/translations.js';
+import NotFound from './NotFound.jsx';
 
 const EASE = [0.22, 0.61, 0.36, 1];
 
@@ -108,11 +109,7 @@ export default function ProjectPage({ slug, onNav, t }) {
   const nextP = nextBase ? getProject(PROJECTS, nextBase.slug, lang) : null;
 
   if (!p) {
-    return (
-      <div style={{ padding: '120px 0' }}>
-        <p>Project not found.</p>
-      </div>
-    );
+    return <NotFound onNav={onNav} />;
   }
 
   const body = t.bodySize === 'small' ? 15 : t.bodySize === 'large' ? 19 : 17;

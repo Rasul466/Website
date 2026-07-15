@@ -48,6 +48,15 @@ export const STRINGS = {
       p3:
         "Focused on product thinking, UX systems, data-driven design, and mobile experiences for fintech and digital products.",
     },
+    notFound: {
+      eyebrow: "404",
+      pre: "This page went ",
+      italic: "somewhere else",
+      post: " — or maybe never existed at all.",
+      description:
+        "Check the link, or head back and pick a project from the list.",
+      button: "Back to home",
+    },
   },
 
   ru: {
@@ -96,6 +105,15 @@ export const STRINGS = {
         "В последнее время ухожу глубже в продукт — собираю флоу, описываю аналитические события, иногда веду фичу end-to-end без продакта рядом. Делать аккуратный UI — здорово. Но проектировать умный, масштабируемый опыт, который реально помогает людям, — вот это настоящий интерес.",
       p3:
         "Фокус на продуктовом мышлении, UX-системах, дизайне на основе данных и мобильных продуктах для финтеха и цифровых сервисов.",
+    },
+    notFound: {
+      eyebrow: "404",
+      pre: "Эта страница ",
+      italic: "потерялась",
+      post: " — или её никогда не было.",
+      description:
+        "Проверьте ссылку или вернитесь на главную и выберите проект из списка.",
+      button: "На главную",
     },
   },
 };
