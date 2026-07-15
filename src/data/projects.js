@@ -36,13 +36,14 @@ export const PROJECTS = [
     context: {
       pull: "The product worked. The app didn't explain it.",
       paragraphs: [
-        "Feedback from the call center, the support team, and our partners kept pointing at the same problems: users struggled to open cards on their own, didn't understand the card conditions, and were confused about how they could use their limit. The interface itself also felt outdated.",
-        "I was asked to rethink the overall experience without a detailed brief or a predefined solution. The first couple of weeks went into identifying the screens that created the most friction and understanding where users were getting stuck.",
+        "People apply for installment plans while standing at the checkout. They already have the product in their hands and need to make a decision within 30–40 seconds, under the pressure of a queue and the anxiety of taking on debt. The product failed to respect that moment.",
+        "For months, support, the call center, and merchant partners had been reporting the same issues: users couldn't activate their card on their own, didn't understand the terms, and were confused about their available credit limit. There was no formal brief—just a clear mandate: fix it.",
       ],
     },
     approach: [
-      "I started by analysing the biggest product issues and identifying the screens that created the most friction. I explored solutions from both local and international BNPL products as reference, and some of the redesign decisions were validated through A/B tests to see which approach actually performed better.",
-      "The redesign itself moved quickly thanks to an existing design system, which kept the work consistent and scalable across the team.",
+      "I redesigned the flow for the checkout moment, not for users with time to think. The terms and available credit limit were surfaced on the very first screen, eliminating unnecessary navigation and extra steps.",
+      "I also refreshed the visual language. The outdated interface was undermining trust at the exact moment when users were already feeling anxious about making a financial decision.",
+      "An established design system allowed me to focus on improving the flow itself instead of rebuilding UI components from scratch.",
     ],
     outcome: {
       pull: "Roughly 100 additional installment cards opened every day.",
