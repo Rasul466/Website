@@ -74,6 +74,9 @@ export default function App() {
 
     if (nextPath !== currentPath) {
       window.history.pushState(nextView, '', nextPath);
+      if (window.ym) {
+        window.ym(110754437, 'hit', window.location.href);
+      }
     }
 
     setView(nextView);
