@@ -25,13 +25,17 @@ const BASE_PATH = import.meta.env.BASE_URL.endsWith('/')
   : import.meta.env.BASE_URL;
 
 function getViewFromLocation() {
-  const slug = window.location.hash.replace(/^#\/?/, '').replace(/^\/+|\/+$/g, '');
+  let path = window.location.pathname;
+  if (BASE_PATH && path.startsWith(BASE_PATH)) {
+    path = path.slice(BASE_PATH.length);
+  }
+  const slug = path.replace(/^\/+|\/+$/g, '');
   return !slug || slug === 'home' ? { view: 'home' } : { view: 'project', slug };
 }
 
 function getPathForView(next) {
-  const leaf = next.view === 'project' && next.slug ? next.slug : 'home';
-  return `${BASE_PATH || ''}#/${leaf}`;
+  const leaf = next.view === 'project' && next.slug ? `/${next.slug}` : '/';
+  return `${BASE_PATH || ''}${leaf}`;
 }
 
 export default function App() {
@@ -41,7 +45,7 @@ export default function App() {
   useEffect(() => {
     const nextView = getViewFromLocation();
     const canonicalPath = getPathForView(nextView);
-    const currentPath = `${window.location.pathname}${window.location.hash}`;
+    const currentPath = window.location.pathname;
     if (currentPath !== canonicalPath) {
       window.history.replaceState(nextView, '', canonicalPath);
     }
@@ -49,7 +53,7 @@ export default function App() {
     const handleRouteChange = () => {
       const nextView = getViewFromLocation();
       const nextPath = getPathForView(nextView);
-      const currentPath = `${window.location.pathname}${window.location.hash}`;
+      const currentPath = window.location.pathname;
       if (currentPath !== nextPath) {
         window.history.replaceState(nextView, '', nextPath);
       }
@@ -60,10 +64,8 @@ export default function App() {
     };
 
     window.addEventListener('popstate', handleRouteChange);
-    window.addEventListener('hashchange', handleRouteChange);
     return () => {
       window.removeEventListener('popstate', handleRouteChange);
-      window.removeEventListener('hashchange', handleRouteChange);
     };
   }, []);
 
