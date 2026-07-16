@@ -24,7 +24,7 @@ export const PROJECTS = [
     team: "1 designer, 4 developers, 2 PMs",
     year: "2024 — 2026",
     scope: "BNPL, B2C",
-    headline: "+100 cards opened daily",
+    headline: "+40% daily card openings",
     cardCopy: "Installment shopping app for clients.",
     title: {
       pre: "Redesigning the installment app to help users feel",
@@ -46,12 +46,13 @@ export const PROJECTS = [
       "An established design system allowed me to focus on improving the flow itself instead of rebuilding UI components from scratch.",
     ],
     outcome: {
-      pull: "Roughly 100 additional installment cards opened every day.",
+      pull: "Card openings grew from an average of 250 to 350 per day — a 40% increase comparing the month before and after release, in the exact stage of the funnel where users were previously dropping off due to difficulty opening a card on their own.",
       stats: [
-        { value: "+100", label: "Cards / day", italic: false },
+        { value: "+40%", label: "Card openings / day", italic: false },
+        { value: "+50%", label: "Limit disbursed / day", italic: false },
       ],
       tail:
-        "Beyond the metric, the bigger shift was qualitative — users now understand where and how they can actually use their available limit, and the support team spends a lot less time explaining it.",
+        "This reflects a funnel improvement, not a full resolution of the original problem — numbers fluctuated due to dependency on the partner bank's infrastructure. Beyond the metric, the qualitative shift mattered too: users now understand where and how to use their available limit, and support spends far less time explaining it.",
     },
   },
 
