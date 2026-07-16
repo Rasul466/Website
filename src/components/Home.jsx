@@ -348,8 +348,14 @@ export default function Home({ onNav, t }) {
       >
         <div></div>
         <div>
-          <div
+          <motion.div
             onClick={() => onNav({ view: 'project', slug: projects[5].slug })}
+            className="rp project-thumb"
+            whileHover="hover"
+            initial="rest"
+            animate="rest"
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.02 } }}
+            transition={{ duration: 0.3, ease: EASE }}
             style={{
               aspectRatio: '21/9',
               background: projects[5].swatch,
@@ -364,16 +370,17 @@ export default function Home({ onNav, t }) {
               fontFamily: 'ui-monospace, Menlo, monospace',
               overflow: 'hidden',
             }}
-            className="rp project-thumb"
           >
             {projects[5].thumb && (
-              <img
+              <motion.img
                 src={projects[5].thumb}
                 alt={projects[5].name}
+                variants={{ rest: { scale: 1 }, hover: { scale: 1.08 } }}
+                transition={{ duration: 0.3, ease: EASE }}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
               />
             )}
-          </div>
+          </motion.div>
           <div
             className="rp"
             style={{
