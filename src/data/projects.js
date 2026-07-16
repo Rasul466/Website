@@ -32,7 +32,7 @@ export const PROJECTS = [
       post: "to open cards on their own.",
     },
     lede:
-      "Reworking a consumer BNPL app where users often couldn't open cards on their own, didn't understand the conditions, and were confused about how to actually use their limit.",
+      "Reworking a consumer BNPL app where users often couldn't open cards on their own — especially in the 30 seconds it takes to decide at checkout — didn't understand the conditions, and were confused about how to actually use their limit.",
     context: {
       pull: "The product worked. The app didn't explain it.",
       paragraphs: [
