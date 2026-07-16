@@ -187,7 +187,7 @@ export const PROJECTS = [
       post: "— guiding customers through approval at the counter.",
     },
     lede:
-      "Designing a mobile app that lets merchants walk customers through scoring and issue installment limits — without depending on the consumer app.",
+      "Designing a mobile app that lets merchants walk customers through scoring and issue installment limits at the counter.",
     context: {
       pull: "Most store employees were 25+ and not tech-oriented. The UI had to disappear.",
       paragraphs: [
@@ -197,16 +197,17 @@ export const PROJECTS = [
     },
     approach: [
       "I built the app on top of the design system we'd already shipped, which let the team assemble an MVP and ship to production quickly.",
-      "Every step of the customer-facing flow was thought through with the merchant's daily routine in mind — short interactions, clear hierarchy, no surprises. After release, we kept iterating: adding new features and refining existing ones based on store feedback.",
+      "Every step of the customer-facing flow was thought through with the merchant's daily routine in mind — short interactions, clear hierarchy, no surprises.",
+      "Based on store feedback, added an installment calculator so merchants could show customers the monthly payment and total cost before the purchase was made — turning a question customers used to ask verbally into something the merchant could show on screen instantly.",
     ],
     outcome: {
-      pull: "Card openings up 50% — more than double the target.",
+      pull: "Card openings up 50% — more than double the target — with the merchant app becoming a primary channel, not a side one.",
       stats: [
         { value: "+50%", label: "Cards opened", italic: false },
-        { value: "2.5×", label: "Vs. internal goal", italic: true },
+        { value: "~50%", label: "Of all cards now via merchant app", italic: true },
       ],
       tail:
-        "Beyond the headline number, the increase in cards drove a noticeable lift in overall sales — which was the real point of the project all along.",
+        "The internal target was a 20% lift — the app overshot it 2.5x, and now accounts for roughly half of all installment cards opened company-wide. Sales through installment grew measurably after release, compared against the same period before launch (exact figures withheld under NDA).",
     },
   },
 
