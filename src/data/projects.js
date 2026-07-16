@@ -128,7 +128,7 @@ export const PROJECTS = [
     team: "1 designer, 3 developers, 1 PM",
     year: "2024 — 2025",
     scope: "BNPL, B2C",
-    headline: "+15% DAU, +14% MAU",
+    headline: "4-5k → 50k monthly active users",
     cardCopy: "Interactive map for finding stores.",
     title: {
       pre: "Rebuilding store discovery as an",
@@ -136,26 +136,27 @@ export const PROJECTS = [
       post: "— not a list of categories.",
     },
     lede:
-      "I independently identified the product problems on the previous store directory and proposed a new direction for the discovery experience.",
+      "I identified the product problems on the previous store directory and proposed a new direction for the discovery experience — the product owner approved it, and I owned execution end-to-end.",
     context: {
-      pull: "A long list of categories nobody used.",
+      pull: "A catalog nobody browsed — just a long list of stores.",
       paragraphs: [
-        "The previous version of the section was a large list of categories and stores. Engagement metrics were close to zero — users didn't understand the value of the feature.",
-        "The goal was to rethink the experience and create a more intuitive way for users to quickly find nearby stores where they could spend their installment limit.",
+        "Having built similar functionality before, I recognized the pattern immediately: the store directory was a dry, oversized list with no clear value to the user. Engagement was close to zero.",
+        "I put together rough screens and a roadmap and brought them to the product owner. Once approved, I owned the business logic and execution end-to-end — the product owner saw the finished feature, not the process.",
       ],
     },
     approach: [
-      "Completely redesigned the section structure and the user flows around it — map navigation, store clustering, promotions, installment-plan terms, and detailed store pages with products and special offers.",
-      "Each brand page picked up the key information users had been missing: installment terms, current promotions, and featured products from the store itself. The focus throughout was usability, store discovery, and lifting engagement above the list-based baseline.",
+      "Completely redesigned the section structure and the flows around it — map navigation, store clustering, promotions, installment-plan terms, and detailed store pages with products and special offers.",
+      "Chose to cluster nearby stores instead of listing them flat — with dozens of stores in a single city, an uncluster pin map would have recreated the same visual noise as the old list, just moved onto a map.",
+      "Each brand page surfaced exactly what users had been missing: installment terms, live promotions, and featured products from the store itself.",
     ],
     outcome: {
-      pull: "Daily engagement up 15%, monthly up 14%.",
+      pull: "From a section nobody opened to one people return to every month.",
       stats: [
-        { value: "+15%", label: "DAU", italic: false },
-        { value: "+14%", label: "MAU", italic: true },
+        { value: "4-5k → 50k", label: "Monthly active users", italic: false },
+        { value: "10x", label: "Growth in engagement", italic: true },
       ],
       tail:
-        "The map rebuilt the section's role inside the wider installment ecosystem — from a directory people ignored into a real discovery surface that drives engagement.",
+        "The map turned a section people scrolled past into one of the most consistently used parts of the app — a stable shift, not a one-time spike, measured within the store discovery section itself.",
     },
   },
 
