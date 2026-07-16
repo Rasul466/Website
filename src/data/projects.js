@@ -238,7 +238,7 @@ export const PROJECTS = [
       post: "for a medical clinic running on Excel spreadsheets.",
     },
     lede:
-      "Designing a clean, day-long-comfortable interface for staff who'd been managing the clinic out of a stack of shared spreadsheets.",
+      "Designing a clean, day-long-comfortable interface after spending time on-site shadowing the accountants, doctors, and staff who'd been running the clinic out of shared spreadsheets.",
     context: {
       pull: "All clinic operations lived in Excel.",
       paragraphs: [
@@ -254,7 +254,7 @@ export const PROJECTS = [
       pull: "A unified ERP, replacing the Excel sprawl.",
       stats: [],
       tail:
-        "The clinic ended up with a single ERP that automated key internal processes and retired the old Excel-based workflows. Day-to-day work got faster and simpler, and collaboration between departments became measurably more organised.",
+        "The clinic ended up with a single ERP that automated key internal processes and retired the old Excel-based workflows, giving staff one place to manage records, scheduling, and accounting instead of a patchwork of spreadsheets.",
     },
   },
 
