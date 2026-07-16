@@ -285,23 +285,24 @@ export const PROJECTS = [
       post: "consumer fintech app, paired with an internal analytics module.",
     },
     lede:
-      "Designing both the mobile app — with P2P transfers as the main revenue driver — and a dashboard for PMs to monitor key metrics and product performance.",
+      "A full redesign of an existing P2P transfers app — plus a smaller, separate project building an internal analytics dashboard for the PM team.",
     context: {
-      pull: "Two audiences, two design problems, one product.",
+      pull: "A full app redesign — and a separate, smaller project done at a different time.",
       paragraphs: [
-        "The app side was built around P2P transfers — they were the product's main source of revenue, so the flow had to be near-frictionless and predictable. The analytics side, meanwhile, was internal: PMs needed to see what was happening across the product quickly, without learning a new tool.",
-        "I worked closely with the Team Lead and PM to walk through every screen and user flow together. A lot of the work was edge cases — finding them, refining them, pulling them back into something coherent.",
+        "This was a full redesign of an existing consumer app centered on P2P transfers, the product's main revenue driver. It was built on the company's design system — an atomic-style system led by our team lead, which I used but had only a small part in building. I worked closely with the Team Lead and PM to walk through every screen and flow together. A lot of the work was edge cases — finding them, refining them, pulling them back into something coherent.",
+        "Separately, at a different point in time, I designed a smaller internal analytics module — a dashboard giving PMs a live view of key product metrics instead of manually assembled reports.",
       ],
     },
     approach: [
-      "We built on top of the team's existing design system, which gave us a strong head start. The challenge was less about inventing and more about specifying every screen and flow precisely enough to ship.",
-      "I ran user tests with interactive Figma prototypes — selecting participants, interviewing them, and watching them work through the key flows live. The interviews drove iteration through the whole project; each round produced sharper hypotheses for the next.",
+      "For the app redesign, I ran usability tests with interactive Figma prototypes across 12 participants. One clear finding: people didn't understand the slider-to-confirm gesture at the end of the transfer flow once every field was filled in — we replaced it with a standard button.",
+      "I also ran an A/B test on field order in the transfer flow. The version showing balance first, then destination, then amount outperformed the alternatives — people wanted to confirm they had enough money before deciding how much to send, not the other way around.",
+      "The analytics module was a much smaller effort — built within the same design system, focused purely on giving PMs one live place to check metrics instead of digging through spreadsheets.",
     ],
     outcome: {
-      pull: "A consumer-and-internal pairing, shaped by interviews and A/B tests.",
+      pull: "A shipped redesign, and a smaller module that replaced manual reporting.",
       stats: [],
       tail:
-        "Across this project I sharpened my approach to user interviews and A/B testing, and worked very closely with the Product Owner and engineering team to make sure the design actually shipped in the form it was intended.",
+        "The redesigned app shipped to production. Separately, the analytics module replaced the PM team's Excel-based reporting with a single live dashboard.",
     },
   },
 ];
