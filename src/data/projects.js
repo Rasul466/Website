@@ -76,7 +76,7 @@ export const PROJECTS = [
     team: "3 designers, 12 developers, 3 PMs",
     year: "2024 — present",
     scope: "Design system, Ecosystem",
-    headline: "~40% faster feature releases",
+    headline: "One shared language, consistent across every product",
     cardCopy: "Design system for Open company.",
     title: {
       pre: "Rethinking the customer experience by building a",
@@ -86,24 +86,25 @@ export const PROJECTS = [
     lede:
       "Identical screens across our products were looking different. We didn't really feel like an ecosystem yet, even though our products were tightly connected.",
     context: {
-      pull: "Identical screens, drifting apart in every product.",
+      pull: "Every product speaking a slightly different visual language.",
       paragraphs: [
-        "Even within a single project there wasn't a real component library. Style, spacing, and approach diverged from one product to the next. We couldn't honestly call ourselves an ecosystem — even with all the products interconnected — until the design language caught up with the architecture.",
-        "I stepped into the role of informal design-system lead and owner. Every new component went through my review and testing before it joined the system.",
+        "Across the company's products, the same basic elements — inputs, buttons, cards, onboarding flows — were each built independently by different teams. Spacing, component behavior, and even how a button responded to input state varied from product to product, even though the products were tightly interconnected and meant to feel like one ecosystem.",
+        "There was no formal design-system role. I stepped into it informally, reviewing and testing every new component before it joined the shared library, working alongside three designers and twelve developers building across the full product portfolio.",
       ],
     },
     approach: [
-      "We started with an audit — collecting every existing UI component across the products — and then introduced an atomic approach, building from the smallest primitives up.",
-      "We defined design tokens for colour and typography (primitive tokens first, then semantic ones on top), built reusable components, and continuously tested them across real product scenarios. The goal was a system that stayed consistent, scaled cleanly, and was easy for the team to maintain.",
+      "Started with an audit — collecting every existing version of shared components across all products, from inputs and buttons to full onboarding flows — before designing a single new element.",
+      "Built up from primitives: defined base tokens for colour and spacing, layered semantic tokens on top, then assembled reusable components tested against real scenarios across multiple products rather than a single isolated flow.",
+      "Rolled the system out incrementally, product by product — the registration flow, for instance, went from two screens to one, with buttons now reflecting form state directly instead of always appearing clickable regardless of readiness.",
     ],
     outcome: {
-      pull: "Around 40% faster development and release of new features.",
+      pull: "One shared language, consistent across every product.",
       stats: [
-        { value: "~40%", label: "Faster releases", italic: false },
-        { value: "Atomic", label: "Build approach", italic: true },
+        { value: "12+", label: "Developers building on it", italic: false },
+        { value: "Shared", label: "Component library", italic: true },
       ],
       tail:
-        "A unified system meant fewer repetitive decisions, more consistent collaboration between designers and developers, and a foundation that lets the team build and scale interfaces much faster than before.",
+        "Teams across products now pull from the same library instead of rebuilding the same primitives independently — the registration flow is one visible example, where a two-screen step became one and now behaves identically across sign-up and login. The team also reported noticeably faster feature releases after adopting the system — this wasn't formally measured, but the shift was consistent enough to be felt across releases.",
     },
   },
 
