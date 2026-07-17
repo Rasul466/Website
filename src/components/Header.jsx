@@ -1,5 +1,6 @@
 import { useLang } from '../hooks/useLang.jsx';
 import { ASSETS } from '../data/projects.js';
+import LangSwitch from './LangSwitch.jsx';
 
 export default function Header({ onNav, current }) {
   const { S } = useLang();
@@ -52,6 +53,7 @@ export default function Header({ onNav, current }) {
         >
           {S.nav.contact}
         </span>
+        <LangSwitch />
       </span>
     </div>
   );

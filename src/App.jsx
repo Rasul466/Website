@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header.jsx';
 import Home from './components/Home.jsx';
 import ProjectPage from './components/ProjectPage.jsx';
-import LangSwitch from './components/LangSwitch.jsx';
 import {
   TweaksPanel,
   TweakSection,
@@ -132,8 +131,6 @@ export default function App() {
           )}
         </AnimatePresence>
       </div>
-
-      <LangSwitch />
 
       <TweaksPanel title="Tweaks">
         <TweakSection title="Type & rhythm">
