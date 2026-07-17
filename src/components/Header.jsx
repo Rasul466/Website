@@ -34,24 +34,26 @@ export default function Header({ onNav, current }) {
           style={{ height: 28, width: 'auto', display: 'block' }}
         />
       </span>
-      <span style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
-        <span
-          style={linkStyle(false)}
-          onClick={() => onNav({ view: 'home', anchor: 'about' })}
-        >
-          {S.nav.about}
-        </span>
-        <span
-          style={linkStyle(false)}
-          onClick={() => onNav({ view: 'home', anchor: 'projects' })}
-        >
-          {S.nav.projects}
-        </span>
-        <span
-          style={linkStyle(false)}
-          onClick={() => onNav({ view: 'home', anchor: 'contact' })}
-        >
-          {S.nav.contact}
+      <span style={{ display: 'flex', gap: 48, alignItems: 'center' }}>
+        <span style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
+          <span
+            style={linkStyle(false)}
+            onClick={() => onNav({ view: 'home', anchor: 'about' })}
+          >
+            {S.nav.about}
+          </span>
+          <span
+            style={linkStyle(false)}
+            onClick={() => onNav({ view: 'home', anchor: 'projects' })}
+          >
+            {S.nav.projects}
+          </span>
+          <span
+            style={linkStyle(false)}
+            onClick={() => onNav({ view: 'home', anchor: 'contact' })}
+          >
+            {S.nav.contact}
+          </span>
         </span>
         <LangSwitch />
       </span>
