@@ -1,20 +1,10 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { STRINGS } from '../data/translations.js';
 
 const LangContext = createContext(null);
 
 export function LangProvider({ children }) {
-  const [lang, setLang] = useState(() => {
-    try {
-      return localStorage.getItem('portfolio.lang') || 'ru';
-    } catch {
-      return 'ru';
-    }
-  });
-
-  useEffect(() => {
-    try { localStorage.setItem('portfolio.lang', lang); } catch {}
-  }, [lang]);
+  const [lang, setLang] = useState('ru');
 
   const value = { lang, S: STRINGS[lang], setLang };
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
